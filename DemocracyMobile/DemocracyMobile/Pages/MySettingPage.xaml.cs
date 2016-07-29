@@ -39,6 +39,12 @@ namespace DemocracyMobile.Pages
             groupEntry.Text = user.Group;
 
             saveButton.Clicked += SaveButton_Clicked;
+            changePasswordButton.Clicked += ChangePasswordButton_Clicked;
+        }
+
+        private async void ChangePasswordButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ChangePasswordPage(this.user));
         }
 
         private async void SaveButton_Clicked(object sender, EventArgs e)
