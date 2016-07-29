@@ -36,13 +36,18 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="Cells\MyVotingCells.cs" />
+    <Compile Include="Cells\VotingCell.cs" />
+    <Compile Include="Classes\Candidate.cs" />
     <Compile Include="Classes\ChangePasswordRequest.cs" />
     <Compile Include="Classes\LoginRequest.cs" />
     <Compile Include="Classes\Response.cs" />
+    <Compile Include="Classes\State.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Classes\UserPassword.cs" />
     <Compile Include="Classes\UserPasswordConfirmation.cs" />
     <Compile Include="Classes\Utilities.cs" />
+    <Compile Include="Classes\Voting.cs" />
     <Compile Include="Pages\ChangePasswordPage.xaml.cs">
       <DependentUpon>ChangePasswordPage.xaml</DependentUpon>
     </Compile>
@@ -55,8 +60,14 @@
     <Compile Include="Pages\MySettingPage.xaml.cs">
       <DependentUpon>MySettingPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\MyVotingPage.xaml.cs">
+      <DependentUpon>MyVotingPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\RegisterPage.xaml.cs">
       <DependentUpon>RegisterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\VotingPage.xaml.cs">
+      <DependentUpon>VotingPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -118,6 +129,18 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\ChangePasswordPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\MyVotingPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\VotingPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

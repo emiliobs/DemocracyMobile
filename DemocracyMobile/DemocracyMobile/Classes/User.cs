@@ -28,6 +28,24 @@ namespace DemocracyApp.Classes
 
         public string Photo { get; set; }
 
+        public string GradeEdited
+        {
+            get
+            {
+                return $"Grade: {this.Grade}";
+
+            }
+        }
+
+        public string GroupEdited
+        {
+            get
+            {
+                return $"Group: {this.Group}";
+
+            }
+        }
+
         public string FullName
         {
             get
