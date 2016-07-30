@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemocracyMobile.Pages.ResultDetaiPage" Title="Resutl Details.">
+  <ScrollView>
+    <StackLayout Padding="10,20,10,10" Spacing="10">
+     
+      <StackLayout Orientation="Horizontal">
+        <StackLayout Orientation="Vertical">
+          <Label x:Name="descriptionLabel"
+                 FontSize="20"
+                 FontAttributes="Bold"
+                 HorizontalOptions="StartAndExpand"
+                 VerticalOptions="Center"/>
+          <Label x:Name="remarksLabel"
+                 HorizontalOptions="StartAndExpand"
+                 VerticalOptions="Center"/>
+          <Label x:Name="dateTimeStartLabel"
+                 HorizontalOptions="StartAndExpand"
+                 VerticalOptions="Center"/>
+          <Label x:Name="dateTimeEndLabel"
+                 HorizontalOptions="StartAndExpand"
+                 VerticalOptions="Center"/>
+          <Label x:Name="quantityVotesLabel"
+                 HorizontalOptions="StartAndExpand"
+                 VerticalOptions="Center"/>
+          <Label Text="Winner"
+                 FontAttributes="Bold"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"/>
+          <Label x:Name="winnerNameLabel"
+                 HorizontalOptions="Start"
+                 VerticalOptions="Center"/>
+          <Label x:Name="winnerGradeLabel"
+                 HorizontalOptions="Start"
+                 VerticalOptions="Center"/>
+          <Label x:Name="winnerGroupLabel"
+                 HorizontalOptions="Start"
+                 VerticalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Orientation="Vertical">
+          <Image x:Name="winnerPhotoImage"
+                 HorizontalOptions="End"/>
+        </StackLayout>
+      </StackLayout>
+      <Label Text="Candidates"
+             FontAttributes="Bold"
+             HorizontalOptions="Center"
+             VerticalOptions="Center"/>
+      <ListView x:Name="candidatesListView" />
+    </StackLayout>
+
+  </ScrollView>
+
+</ContentPage>

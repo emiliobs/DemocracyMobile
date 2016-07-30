@@ -27,7 +27,18 @@ namespace DemocracyMobile.Pages
             this.user= user;
             mySettingsButton.Clicked += MySettingsButton_Clicked;
             myVotingsButton.Clicked += MyVotingsButton_Clicked;
+            resultsButton.Clicked += ResultsButton_Clicked;
+            logOutButton.Clicked += LogOutButton_Clicked;
+        }
 
+        private  async void LogOutButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
+
+        private async void ResultsButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ResultPage());
         }
 
         private async void MyVotingsButton_Clicked(object sender, EventArgs e)

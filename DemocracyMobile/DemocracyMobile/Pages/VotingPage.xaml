@@ -4,7 +4,7 @@
              x:Class="DemocracyMobile.Pages.VotingPage" Title="Votin for Candidate.">
 
   <ScrollView>
-    <StackLayout Padding="10,20,10,10" Spacing="10">
+    <StackLayout Spacing="10">
 
       <ActivityIndicator x:Name="waitActivityIndicator"
                          HorizontalOptions="Center"
