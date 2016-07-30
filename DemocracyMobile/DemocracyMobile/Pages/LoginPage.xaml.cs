@@ -1,4 +1,5 @@
 ﻿using DemocracyApp.Classes;
+using DemocracyMobile.Classes;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -112,6 +113,16 @@ namespace DemocracyMobile.Pages
                 UserId = user.UserId,
                 UserName = user.UserName,
             };
+
+
+            if (remembermeSwitch.IsToggled)
+            {
+                using (var db = new DataAccess())
+                {
+                    //la clase generica dataAccess con metodo insert pregunsta igresar que???-> un suerpassword class:
+                    db.Insert<UserPassword>(userPassword);
+                }
+            }
 
             await Navigation.PushAsync(new HomePage(userPassword));
            // await DisplayAlert("OK","Welcome: " +user.FullName, "Acept");

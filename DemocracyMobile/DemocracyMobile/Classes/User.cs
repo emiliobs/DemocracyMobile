@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite.Net.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,8 @@ namespace DemocracyApp.Classes
 {
     public class User
     {
+        //para enviar este modelo a bd debe tener un atributo primarykey:
+        [PrimaryKey]
         public int UserId { get; set; }
 
         public string UserName { get; set; }
@@ -68,5 +71,9 @@ namespace DemocracyApp.Classes
             }
         }
 
+        public override int GetHashCode()
+        {
+            return this.UserId;
+        }
     }
 }

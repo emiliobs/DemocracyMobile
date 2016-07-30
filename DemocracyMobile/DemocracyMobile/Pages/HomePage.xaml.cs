@@ -1,4 +1,5 @@
 ﻿using DemocracyApp.Classes;
+using DemocracyMobile.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,7 +34,20 @@ namespace DemocracyMobile.Pages
 
         private  async void LogOutButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PopAsync();
+            //pregunto si quoere salir o no de la aplicacion:
+            var response = await DisplayAlert("Conformation", "Are you sure to Log Out.?","Yes","No");
+
+            if (!response)
+            {
+                return;
+            }
+
+            using (var db = new DataAccess())
+            {
+                db.Delete<UserPassword>(this.user);
+            }
+
+            await Navigation.PushAsync(new LoginPage());
         }
 
         private async void ResultsButton_Clicked(object sender, EventArgs e)

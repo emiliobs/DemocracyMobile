@@ -1,4 +1,6 @@
 ﻿
+using DemocracyApp.Classes;
+using DemocracyMobile.Classes;
 using DemocracyMobile.Pages;
 using System;
 using System.Collections.Generic;
@@ -13,8 +15,27 @@ namespace DemocracyMobile
     {
         public App()
         {
+
+            //Aqui pregunto si hay o no usuario en la BD:
+            //utilizo el using para que cierre la conexion de forma automatica:
+
             // The root page of your application
-            MainPage = new NavigationPage( new LoginPage());
+            using (var db = new DataAccess())
+            {
+                var user = db.First<UserPassword>(false);
+
+                if (user == null)
+                {
+                    MainPage = new NavigationPage(new LoginPage());
+                }
+                else
+                {
+                    MainPage = new NavigationPage(new HomePage(user));
+                }
+            }
+
+           
+         
           
         }
 
